@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Jimmy & Ricka</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <style>
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+      pointer-events: none;
+    }
+    .slide.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .bg-cover-custom {
+      background-image: url('WhatsApp Image 2025-04-20 at 15.00.24_41ef9608.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- Landing Page -->
+  <div id="landing" class="fixed inset-0 z-50 bg-cover bg-center flex items-center justify-center" style="background-image: url('WhatsApp Image 2025-04-20 at 15.00.24_41ef9608.jpg');">
+    <div class="bg-gradient-to-b from-black/10 to-black/70 w-full h-full absolute"></div>
+    <div class="relative z-10 text-center px-4">
+      <h2 class="text-white text-lg font-light tracking-widest">The Wedding Of</h2>
+      <h1 class="text-white text-5xl font-bold mt-1">Jimmy<br>& Ricka</h1>
+
+      <div class="mt-10 text-white text-sm font-light">
+        <p>Kepada Yth.</p>
+        <p>Bapak/Ibu/Saudara/i</p>
+        <h3 class="text-2xl font-bold mt-2">fadli</h3>
+      </div>
+
+      <button onclick="enterInvitation()" class="mt-8 bg-white text-black py-2 px-6 rounded shadow inline-flex items-center gap-2 z-20 relative">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        Buka Undangan
+      </button>
+    </div>
+  </div>
+
+  <!-- Container All Slides -->
+  <div id="slides" class="relative w-full h-screen overflow-hidden">
+    <!-- Slide 1: Cover -->
+    <section class="slide active bg-cover-custom flex items-center justify-center text-center p-4">
+      <div class="bg-black bg-opacity-50 p-6 rounded-lg max-w-lg w-full">
+        <p class="text-sm tracking-widest">The Wedding Of</p>
+        <h1 class="text-4xl font-bold mt-2">Jimmy & Ricka</h1>
+        <p class="mt-4">Selamat datang di undangan pernikahan kami.</p>
+        <button onclick="nextSlide()" class="mt-6 bg-white text-black px-6 py-2 rounded">Lanjut</button>
+      </div>
+    </section>
+
+    <!-- Slide 2: Mempelai -->
+    <section class="slide bg-cover-custom flex flex-col justify-end text-white relative">
+      <div class="bg-gradient-to-t from-black via-black/60 to-transparent w-full p-6 text-center">
+        <p class="text-lg">The Wedding Of</p>
+        <h2 class="text-4xl font-bold mt-2">Jimmy & Ricka</h2>
+        <p class="mt-2">Minggu, 25 Mei 2025</p>
+      </div>
+    </section>
+
+    <!-- Slide 3: Mempelai Detail -->
+    <section class="slide relative flex items-center justify-center text-center p-4" style="background-image: url('WhatsApp Image 2025-04-20 at 15.00.24_41ef9608.jpg'); background-size: cover; background-position: center;">
+        <div class="mb-4">
+          <h1 class="text-4xl font-semibold tracking-wide text-white">J<span class="text-green-500">/</span>R</h1>
+        </div>
+        <p class="text-white text-lg text-center">
+          Tanpa mengurangi rasa hormat dengan ini kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami.
+        </p>
+        <div class="h-8 w-0.5 bg-gray-600 mb-6"></div>
+        <div class="mb-6">
+          <img src="WhatsApp Image 2025-04-20 at 15.00.23_c08d2e48.jpg" alt="ricka wulansari" class="rounded-[30px] w-64 mx-auto shadow-xl">
+        </div>
+        <h2 class="text-2xl font-semibold text-white mb-2">Ricka Wulansari</h2>
+        <p class="text-white font-medium mb-1">Cimahi</p>
+        <p class="text-white">Udi Wahyudi & Imas Nurcahya</p>
+      </section>
+
+    <!-- Slide 4: Akad & Resepsi -->
+<section class="slide relative flex items-center justify-center text-center p-4" style="background-image: url('WhatsApp Image 2025-04-20 at 15.00.24_41ef9608.jpg'); background-size: cover; background-position: center;">
+  <!-- Overlay gelap agar teks terbaca -->
+  <div class="backdrop-blur inset-30 bg-gray bg-opacity-100"></div>
+<div class="mb-12">
+    <h3 class="text-2xl font-light mb-1">Akad</h3>
+    <p class="text-lg">Senin</p>
+    <p class="text-6xl font-bold mb-1">07</p>
+    <p class="text-lg mb-2">April, 2025</p>
+    <p class="text-sm flex justify-center items-center gap-1 mb-1">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+      </svg>
+      08.00 - 10.00
+    </p>
+    <h3 class="text-sm font-semibold">Kediaman mempelai wanita</h3>
+    <p class="text-sm font-semibold">
+      Padepokan Bale sagala kahuripan, Komp. Taman Firdaus, Pakuhaji<br>
+      Kecamatan Ngamprah, Kabupaten Bandung Barat, Jawa Barat
+    </p>
+    <a href="https://maps.app.goo.gl/9eY8YVtBN7bwcosa8" target="_blank" class="inline-block mt-3 px-4 py-2 bg-white text-gray-700 font-medium rounded-lg shadow hover:bg-gray-200">
+      📍 Google Map
+    </a>
+  </div>
+</section>
+
+    <!-- Slide 5: Galeri -->
+    <section class="slide bg-cover-custom flex flex-col items-center justify-center text-center p-4 overflow-y-auto">
+      <div class="bg-white bg-opacity-20 p-6 rounded max-w-xl max-w-xl">
+        <h2 class="text-3xl font-bold mb-4">Galeri</h2>
+        <div class="gap-2 sm:grip">
+          <img src="WhatsApp Image 2025-04-20 at 15.00.24_41ef9608.jpg" class="rounded shadow-md">
+          <img src="WhatsApp Image 2025-04-20 at 15.00.24_41ef9608.jpg" class="rounded shadow-md">
+          <img src="WhatsApp Image 2025-04-20 at 15.00.24_41ef9608.jpg" class="rounded shadow-md">
+          <img src="WhatsApp Image 2025-04-20 at 15.00.24_41ef9608.jpg" class="rounded shadow-md">
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Doa & Ucapan -->
+    <section class="slide bg-cover-custom flex items-center justify-center text-center p-4">
+      <form action="https://formsubmit.co/wulanricka36@gmail.com" method="POST" class="bg-white text-black p-6 rounded shadow max-w-md w-full">
+        <h2 class="text-2xl font-bold mb-4">Doa & Ucapan</h2>
+        <input type="text" name="nama" placeholder="Nama Anda" class="w-full mb-3 p-2 border rounded" required>
+        <textarea name="pesan" placeholder="Ucapan & Doa" class="w-full mb-3 p-2 border rounded" rows="4" required></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded w-full">Kirim</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Sidebar Navigasi -->
+  <div class="flex justify-between items-center bg-black bg-opacity-60 backdrop-blur-md p-2 fixed bottom-0 w-full text-xs text-white z-40">
+    <button onclick="goToSlide(0)" class="flex flex-col items-center flex-1">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/home.png"/>
+      Cover
+    </button>
+    <button onclick="goToSlide(1)" class="flex flex-col items-center flex-1">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/box.png"/>
+      Couple
+    </button>
+    <button onclick="goToSlide(2)" class="flex flex-col items-center flex-1">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/user.png"/>
+      Profil
+    </button>
+    <button onclick="goToSlide(3)" class="flex flex-col items-center flex-1">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/calendar.png"/>
+      Event
+    </button>
+    <button onclick="goToSlide(4)" class="flex flex-col items-center flex-1">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/image.png"/>
+      Galeri
+    </button>
+    <button onclick="goToSlide(5)" class="flex flex-col items-center flex-1">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/comments.png"/>
+      Ucapan
+    </button>
+  </div>
+
+  <!-- JS Navigasi Slide -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+      slides.forEach((slide) => slide.classList.remove("active"));
+      slides[index].classList.add("active");
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      showSlide(currentSlide);
+    }
+
+    function enterInvitation() {
+      document.getElementById("landing").style.display = "none";
+      document.body.classList.remove("overflow-hidden");
+      showSlide(0);
+    }
+
+    // Kunci scroll saat landing
+    document.body.classList.add("overflow-hidden");
+  </script>
+
+</body>
+</html>
